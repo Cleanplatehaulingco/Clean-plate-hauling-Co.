@@ -3,11 +3,17 @@ services:
     name: clean-plate-command-center
     env: node
     plan: starter
-    buildCommand: npm ci && npm run build
+    buildCommand: npm ci --include=dev && npm run build
     startCommand: npm start
     healthCheckPath: /api/healthz
-    autoDeploy: false
+    autoDeploy: true
+    disk:
+      name: clean-plate-data
+      mountPath: /var/data
+      sizeGB: 1
     envVars:
+      - key: NODE_VERSION
+        value: 20.20.2
       - key: NODE_ENV
         value: production
       - key: PORT
@@ -20,6 +26,8 @@ services:
         sync: false
       - key: APP_ACCESS_TOKEN_TTL_MINUTES
         value: 720
+      - key: SQLITE_FILE
+        value: /var/data/clean-plate.sqlite
       - key: OPENAI_API_KEY
         sync: false
       - key: GOOGLE_SHEETS_CRM_ID
