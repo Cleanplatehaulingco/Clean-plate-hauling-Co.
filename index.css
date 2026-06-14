@@ -1,0 +1,333 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================================
+ * CLEAN PLATE HAULING CO — Emerald Ledger Operations
+ * Black-label work truck grit, deep emerald command surfaces, antique gold signal.
+ * ============================================================================
+ */
+
+/* LIGHT MODE — parchment ledger */
+:root {
+  --button-outline: rgba(7, 37, 24, 0.12);
+  --badge-outline: rgba(7, 37, 24, 0.07);
+  --opaque-button-border-intensity: -8;
+  --elevate-1: rgba(9, 56, 35, 0.045);
+  --elevate-2: rgba(9, 56, 35, 0.11);
+
+  --background: 42 24% 94%;             /* warm parchment */
+  --foreground: 151 38% 8%;             /* ink green */
+  --border: 42 14% 77%;
+  --card: 46 30% 98%;
+  --card-foreground: 151 38% 8%;
+  --card-border: 42 16% 84%;
+
+  --sidebar: 150 42% 6%;                /* deep emerald hall */
+  --sidebar-foreground: 44 35% 92%;
+  --sidebar-border: 148 28% 16%;
+  --sidebar-primary: 44 82% 58%;        /* antique gold active tabs */
+  --sidebar-primary-foreground: 150 44% 6%;
+  --sidebar-accent: 150 32% 12%;
+  --sidebar-accent-foreground: 44 30% 92%;
+  --sidebar-ring: 44 82% 58%;
+
+  --popover: 46 30% 98%;
+  --popover-foreground: 151 38% 8%;
+  --popover-border: 42 16% 82%;
+
+  --primary: 150 42% 9%;
+  --primary-foreground: 44 35% 96%;
+  --secondary: 46 20% 87%;
+  --secondary-foreground: 151 35% 10%;
+  --muted: 44 20% 88%;
+  --muted-foreground: 150 10% 35%;
+  --accent: 44 82% 55%;                 /* antique gold signal */
+  --accent-foreground: 151 42% 7%;
+  --destructive: 7 70% 44%;
+  --destructive-foreground: 42 34% 96%;
+  --input: 42 16% 72%;
+  --ring: 147 55% 32%;
+
+  /* Charts: emerald family + antique gold + copper warning */
+  --chart-1: 151 58% 20%;
+  --chart-2: 154 35% 36%;
+  --chart-3: 44 82% 55%;
+  --chart-4: 175 28% 42%;
+  --chart-5: 17 62% 46%;
+
+  --font-sans: "Inter", "Inter Variable", system-ui, -apple-system, sans-serif;
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", "Geist Mono", ui-monospace, monospace;
+  --font-serif: Georgia, serif;
+  --radius: 0.375rem;
+
+  --shadow-2xs: 0 1px 0 0 hsl(150 45% 8% / 0.05);
+  --shadow-xs: 0 1px 0 0 hsl(150 45% 8% / 0.07);
+  --shadow-sm: 0 1px 2px 0 hsl(150 45% 8% / 0.08), 0 1px 1px -1px hsl(150 45% 8% / 0.05);
+  --shadow: 0 1px 3px 0 hsl(150 45% 8% / 0.1), 0 1px 2px -1px hsl(150 45% 8% / 0.07);
+  --shadow-md: 0 4px 6px -1px hsl(150 45% 8% / 0.12), 0 2px 4px -2px hsl(150 45% 8% / 0.08);
+  --shadow-lg: 0 10px 15px -3px hsl(150 45% 8% / 0.14), 0 4px 6px -4px hsl(150 45% 8% / 0.08);
+  --shadow-xl: 0 20px 25px -5px hsl(150 45% 8% / 0.16), 0 8px 10px -6px hsl(150 45% 8% / 0.08);
+  --shadow-2xl: 0 25px 50px -12px hsl(150 45% 8% / 0.25);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-primary-border: hsl(from hsl(var(--sidebar-primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --sidebar-accent-border: hsl(from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --primary-border: hsl(var(--primary));
+  --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --secondary-border: hsl(var(--secondary));
+  --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --muted-border: hsl(var(--muted));
+  --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --accent-border: hsl(var(--accent));
+  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --destructive-border: hsl(var(--destructive));
+  --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+}
+
+/* DARK MODE — emerald command room */
+.dark {
+  --button-outline: rgba(255, 255, 255, 0.08);
+  --badge-outline: rgba(255, 255, 255, 0.05);
+  --opaque-button-border-intensity: 9;
+  --elevate-1: rgba(255, 255, 255, 0.04);
+  --elevate-2: rgba(255, 255, 255, 0.09);
+
+  --background: 150 42% 5%;
+  --foreground: 44 28% 93%;
+  --border: 150 24% 17%;
+  --card: 150 36% 8%;
+  --card-foreground: 44 28% 93%;
+  --card-border: 150 25% 16%;
+
+  --sidebar: 150 48% 4%;
+  --sidebar-foreground: 44 30% 92%;
+  --sidebar-border: 150 30% 13%;
+  --sidebar-primary: 44 82% 58%;
+  --sidebar-primary-foreground: 150 45% 5%;
+  --sidebar-accent: 150 32% 10%;
+  --sidebar-accent-foreground: 44 30% 92%;
+  --sidebar-ring: 44 82% 58%;
+
+  --popover: 150 34% 9%;
+  --popover-foreground: 44 28% 93%;
+  --popover-border: 150 24% 18%;
+
+  --primary: 44 35% 94%;
+  --primary-foreground: 150 42% 5%;
+  --secondary: 150 27% 13%;
+  --secondary-foreground: 44 28% 92%;
+  --muted: 150 26% 12%;
+  --muted-foreground: 45 11% 63%;
+  --accent: 44 82% 58%;
+  --accent-foreground: 150 45% 5%;
+  --destructive: 7 74% 58%;
+  --destructive-foreground: 42 34% 96%;
+  --input: 150 21% 24%;
+  --ring: 44 82% 58%;
+
+  --chart-1: 146 54% 52%;
+  --chart-2: 153 35% 40%;
+  --chart-3: 44 82% 58%;
+  --chart-4: 176 35% 46%;
+  --chart-5: 17 72% 58%;
+
+  --shadow-2xs: 0 1px 0 0 hsl(0 0% 0% / 0.4);
+  --shadow-xs: 0 1px 0 0 hsl(0 0% 0% / 0.5);
+  --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.5);
+  --shadow: 0 1px 3px 0 hsl(0 0% 0% / 0.55);
+  --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.55);
+  --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.6);
+  --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.6);
+  --shadow-2xl: 0 25px 50px -12px hsl(0 0% 0% / 0.7);
+
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-primary-border: hsl(from hsl(var(--sidebar-primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --sidebar-accent-border: hsl(from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --primary-border: hsl(var(--primary));
+  --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --secondary-border: hsl(var(--secondary));
+  --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --muted-border: hsl(var(--muted));
+  --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --accent-border: hsl(var(--accent));
+  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --destructive-border: hsl(var(--destructive));
+  --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-feature-settings: "cv11", "ss01", "ss03";
+    text-rendering: geometricPrecision;
+  }
+  h1, h2, h3, h4, h5 { font-family: var(--font-display); letter-spacing: -0.01em; }
+  .font-display { font-family: var(--font-display); letter-spacing: -0.01em; }
+  .font-mono { font-family: var(--font-mono); }
+  .num { font-variant-numeric: tabular-nums lining-nums; }
+}
+
+.brand-logo-shell {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 1px solid hsl(var(--sidebar-border));
+  border-radius: 10px;
+  padding: 5px 9px;
+  box-shadow: 0 14px 38px hsl(0 0% 0% / 0.28);
+}
+
+@keyframes premium-scan {
+  0% { transform: translateX(-35%) translateY(-10%) rotate(8deg); opacity: 0; }
+  22% { opacity: 0.35; }
+  100% { transform: translateX(105%) translateY(8%) rotate(8deg); opacity: 0; }
+}
+
+@keyframes breathe-glow {
+  0%, 100% { box-shadow: 0 0 0 hsl(var(--accent) / 0), 0 18px 55px hsl(220 30% 4% / 0.18); }
+  50% { box-shadow: 0 0 34px hsl(var(--accent) / 0.12), 0 24px 75px hsl(220 30% 4% / 0.28); }
+}
+
+.premium-panel {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 18px 70px hsl(220 30% 4% / 0.18);
+  transition: transform 360ms cubic-bezier(.2,.8,.2,1), border-color 360ms ease, box-shadow 360ms ease;
+}
+
+.premium-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 0%, hsl(var(--accent) / 0.075), transparent 30%),
+    linear-gradient(135deg, hsl(var(--foreground) / 0.035), transparent 42%);
+  opacity: 0.85;
+}
+
+.premium-panel > * { position: relative; z-index: 1; }
+
+.premium-panel:hover {
+  transform: translateY(-2px);
+  border-color: hsl(var(--accent) / 0.34);
+  box-shadow: 0 26px 90px hsl(220 30% 4% / 0.26);
+}
+
+.premium-card {
+  transition: transform 300ms cubic-bezier(.2,.8,.2,1), border-color 300ms ease, background-color 300ms ease;
+}
+
+.premium-card:hover {
+  transform: translateY(-1px);
+  border-color: hsl(var(--accent) / 0.35);
+}
+
+.premium-button {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 14px 35px hsl(var(--accent) / 0.14);
+}
+
+.premium-button::after {
+  content: "";
+  position: absolute;
+  top: -60%;
+  bottom: -60%;
+  width: 42%;
+  left: -50%;
+  background: linear-gradient(90deg, transparent, hsl(var(--primary-foreground) / 0.36), transparent);
+  animation: premium-scan 4.8s cubic-bezier(.2,.8,.2,1) infinite;
+}
+
+.premium-hero {
+  position: relative;
+  animation: breathe-glow 8s ease-in-out infinite;
+  background:
+    radial-gradient(circle at 12% 10%, hsl(var(--accent) / 0.18), transparent 22%),
+    radial-gradient(circle at 92% 0%, hsl(38 92% 50% / 0.10), transparent 24%),
+    linear-gradient(135deg, hsl(var(--card)), hsl(var(--background)));
+}
+
+.premium-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, hsl(var(--foreground) / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--foreground) / 0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(to bottom, black, transparent 92%);
+  pointer-events: none;
+}
+
+/* Subtle dispatch-grid background detail */
+.grit-bg {
+  background-image:
+    linear-gradient(to right, hsl(var(--border) / 0.5) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--border) / 0.5) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: -1px -1px;
+}
+
+.tape-stripe {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    hsl(var(--accent)) 0 10px,
+    hsl(220 18% 12%) 10px 20px
+  );
+}
+
+@layer utilities {
+  input[type='search']::-webkit-search-cancel-button { @apply hidden; }
+  [contenteditable][data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+    color: hsl(var(--muted-foreground));
+    pointer-events: none;
+  }
+  .no-default-hover-elevate {}
+  .no-default-active-elevate {}
+
+  .toggle-elevate::before, .toggle-elevate-2::before {
+    content: ''; pointer-events: none; position: absolute; inset: 0;
+    border-radius: inherit; z-index: -1;
+  }
+  .toggle-elevate.toggle-elevated::before { background-color: var(--elevate-2); }
+  .border.toggle-elevate::before { inset: -1px; }
+
+  .hover-elevate:not(.no-default-hover-elevate),
+  .active-elevate:not(.no-default-active-elevate),
+  .hover-elevate-2:not(.no-default-hover-elevate),
+  .active-elevate-2:not(.no-default-active-elevate) {
+    position: relative; z-index: 0;
+  }
+  .hover-elevate:not(.no-default-hover-elevate)::after,
+  .active-elevate:not(.no-default-active-elevate)::after,
+  .hover-elevate-2:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:not(.no-default-active-elevate)::after {
+    content: ''; pointer-events: none; position: absolute; inset: 0;
+    border-radius: inherit; z-index: 999;
+  }
+  .hover-elevate:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-1);
+  }
+  .hover-elevate-2:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-2);
+  }
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate-2:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate-2:not(.no-active-interaction-elevate)::after {
+    inset: -1px;
+  }
+}

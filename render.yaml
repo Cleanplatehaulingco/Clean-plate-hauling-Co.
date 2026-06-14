@@ -1,0 +1,42 @@
+services:
+  - type: web
+    name: clean-plate-command-center
+    env: node
+    plan: starter
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/healthz
+    autoDeploy: false
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: APP_BASIC_AUTH_USER
+        sync: false
+      - key: APP_BASIC_AUTH_PASSWORD
+        sync: false
+      - key: APP_LOGIN_PASSWORD
+        sync: false
+      - key: APP_ACCESS_TOKEN_TTL_MINUTES
+        value: 720
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: GOOGLE_SHEETS_CRM_ID
+        value: 1empthEL88RFmo4tLy3i84V_IBjlKSYCSK9n9F06OpFA
+      - key: GOOGLE_SHEETS_CRM_NAME
+        value: Junk Removal Business Tracker
+      - key: GOOGLE_SHEETS_CRM_TAB
+        value: CRM
+      - key: GOOGLE_SHEETS_JOB_TAB
+        value: Job Entry
+      - key: GOOGLE_SHEETS_AI_LOG_TAB
+        value: AI App Log
+      - key: GOOGLE_OAUTH_CLIENT_ID
+        sync: false
+      - key: GOOGLE_OAUTH_CLIENT_SECRET
+        sync: false
+      - key: GOOGLE_OAUTH_REFRESH_TOKEN
+        sync: false
+      - key: PUBLIC_DASHBOARD_URL
+        value: https://app.cleanplatehaulingco.com
